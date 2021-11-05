@@ -17,7 +17,7 @@ For the scope of this project, it is essential that the development of a CRUD ap
 
 ## Introduction
 
-To meet the project brief set out, I will be developing an online web application to create, retrive, update and delete recipes and a recipe will contain 1 or more ingredients. Throughout the duration of the project I will be creating a risk assessment for the project brief. I will also be completing designs for the database architecture which will be implemented into the application, the application development will also be documented with tests to ensure continuous testing is followed. With efficient project management, I plan to increase the applications functionality by adding employees and an ordering system.
+To meet the project brief set out, I will be developing an online web application to create, retrive, update and delete data for an ordering system to which employees will prepare the orders. Throughout the duration of the project I will be creating a risk assessment for the project brief. I will also be completing designs for the database architecture which will be implemented into the application, the application development will also be documented with tests to ensure continuous testing is followed. With efficient project management, I plan to increase the applications functionality by adding recipes and ingredients
 
 ## Risk Assessment
 

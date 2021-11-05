@@ -24,3 +24,9 @@ To meet the project brief set out, I will be developing an online web applicatio
 Before designing and developing the application, a risk assessment was created to outline the possible complications that could occur during the development and operation of the application as well as the measures that will be put in place to reduce the risk of these complications occuring. Please see below.
 
 ![Risk Assessment](https://github.com/JayRowlands/Project/Resources/Risk-Assessment.png) 
+
+## Design
+
+For the minimum viable product, I have chosen to design an application which orders are placed and completed by employees. Orders are created by an employee. An employee is assigned to complete this order, for the employee to complete the order they must, retrieve it to understand what has been ordered and delete the order once it has been completed, in the case of an order change, the order must be updatable. The database architecture in the resource below shows the 1 to many relationship between and employee and order.
+
+![MVP ERD](https://github.com/JayRowlands/Project/Resources/Project-ERD.png)

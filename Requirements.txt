@@ -1,6 +1,0 @@
-flask
-flask_sqlalchemy
-flask_wtf
-wtforms
-flask_testing
-pymysql

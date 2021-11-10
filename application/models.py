@@ -14,4 +14,4 @@ class Orders(db.model):
     order_name = db.Column(db.String(45))
     cost = db.Column(db.Integer)
     cust_name = db.Column(db.String(45))
-    parent_id = db.Column(db.Integer, db.ForeignKey(Employees.employee_id))
+    employee_id = db.Column(db.Integer, db.ForeignKey(Employees.employee_id))

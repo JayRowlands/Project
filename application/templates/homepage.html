@@ -10,6 +10,7 @@
             <option value="SC"> Starter Chef </option>
             <option value="MC"> Main Chef </option>
             <option value="DC"> Dessert Chef </option>
+            <option value="all"> All Records </option> 
         </select>
         <input type="submit" value="Filter">
     </form>
@@ -22,12 +23,12 @@
             <td> Mobile Number</td>
         </tr>
 
-        {%  for record in records}
+        {%  for record in records %}
             <tr>
                 <td> <a href="{{ url_for('employeeInformation', employee_id = record.employee_id) }}"> {{ record.name }}</a></td>
                 <td> {{ record.role }} </td>
                 <td> {{ record.email }} </td>
-                <td> {{ record.mobile_num </td>
+                <td> {{ record.mobile_num }} </td>
                 <td> <a href="{{ url_for('editEmployee', employee_id = record.employee_id) }}"> edit </a>, 
                     <a href="{{ url_for('deletEmployee', employee_id = record.employee_id) }}"> delete </a>
                 </td>

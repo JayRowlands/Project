@@ -2,9 +2,9 @@
     <h1> Employee Information </h1>
     <br>
     <br>
-    <a href="{{ url_for('saveRecord') }}"> New Record </a>
+    <a href="{{ url_for('save_employee') }}"> New Record </a>
 
-    <form action="{{ url_for('filterrecords') }}" method="POST">
+    <form action="{{ url_for('filter_records') }}" method="POST">
         <select name="role">
             <option value="BC"> Breakfast Chef </option>
             <option value="SC"> Starter Chef </option>

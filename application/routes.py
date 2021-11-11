@@ -15,13 +15,13 @@ def editEmployee(employee_id):
     if request.method == "POST":
         employees.name = form.name.data
         employees.role = form.role.data
-        employees.email = form.role.data
+        employees.email = form.email.data
         employees.mobile_num = form.mobile_num.data
         db.session.commit()
         return redirect('/')
     return render_template('edit_employee_form.html', form=form)
 
-@app.route("/filter_records",methods=["POST"])
+@app.route("/filterRecords",methods=["POST"])
 def filterRecords():
     if request.form["role"]=="all":
         return redirect("/")

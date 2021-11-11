@@ -1,17 +1,17 @@
 from application import app, db
 from flask import render_template, request, redirect
 from application.forms import AddEmployee, UpdateEmployee
-from application.models import Employees
+from application.models import Employee
 
 @app.route('/')
 def home():
-    employees = Employees.query_all()
+    employees = Employee.query_all()
     return render_template('homepage.html', records = employees)
 
 @app.route('/editEmployee/<int:employee_id>', methods=['GET', 'POST'])
 def editEmployee(employee_id):
     form = UpdateEmployee()
-    employees = Employees.query.filter_by(employee_id=employee_id).first()
+    employees = Employee.query.filter_by(employee_id=employee_id).first()
     if request.method == "POST":
         employees.name = form.name.data
         employees.role = form.role.data
@@ -26,7 +26,7 @@ def filterRecords():
     if request.form["role"]=="all":
         return redirect("/")
     else:
-        data = Employees.query.filter_by(dept=request.form["role"]).all()
+        data = Employee.query.filter_by(dept=request.form["role"]).all()
         return render_template("homepage.html",records=data)
 
 @app.route("/saveEmployee",methods=["GET","POST"])
@@ -37,7 +37,7 @@ def saveEmployee():
         role=form.role.data
         email=form.email.data
         mobile_num=form.mobile_num.data
-        new_employee = Employees(name=name, role=role, email=email, mobile_num=mobile_num)
+        new_employee = Employee(name=name, role=role, email=email, mobile_num=mobile_num)
         db.session.add(new_employee)
         db.session.commit()
         return redirect("/")
@@ -45,12 +45,12 @@ def saveEmployee():
 
 @app.route("/employeeInformation/<int:employee_id>")
 def employeeInformation(employee_id):
-	data = Employees.query.filter_by(employee_id=employee_id).first()
+	data = Employee.query.filter_by(employee_id=employee_id).first()
 	return render_template("employee_information.html",record=data)
 
 @app.route("/deleteEmployee/<int:empno>")
 def deleteEmployee(employee_id):
-    employee = Employees.query.filter_by(employee_id=employee_id).first()
+    employee = Employee.query.filter_by(employee_id=employee_id).first()
     db.session.delete(employee)
     db.session.commit()
     return redirect("/")

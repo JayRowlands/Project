@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import IntegerField, StringField, SelectField, SubmitField
 
-from application.models import Employees
+from application.models import Employee
 
 class AddEmployee(FlaskForm):
     name = StringField("Name")
@@ -21,12 +21,12 @@ class AddOrder(FlaskForm):
     order_name = StringField("Order Name")
     cost = IntegerField("Cost")
     cust_name = StringField("Customer Name")
-    employee_id = IntegerField("Id", choice= [Employees.employee_id])
+    employee_id = IntegerField("Id", choice= [Employee.employee_id])
     submit = SubmitField("Add Order")
 
 class UpdateOrder(FlaskForm):
     order_name = StringField("Order Name")
     cost = IntegerField("Cost")
     cust_name = StringField("Customer Name")
-    employee_id = IntegerField("Id", choice= [Employees.employee_id])
+    employee_id = IntegerField("Id", choice= [Employee.employee_id])
     submit = SubmitField("Update Order")

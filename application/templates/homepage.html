@@ -2,9 +2,9 @@
     <h1> Employee Information </h1>
     <br>
     <br>
-    <a href="{{ url_for('save_employee') }}"> New Record </a>
+    <a href="{{ url_for('saveEmployee') }}"> New Record </a>
 
-    <form action="{{ url_for('filter_records') }}" method="POST">
+    <form action="{{ url_for('filterRecords') }}" method="POST">
         <select name="role">
             <option value="BC"> Breakfast Chef </option>
             <option value="SC"> Starter Chef </option>
@@ -24,12 +24,12 @@
 
         {%  for record in records}
             <tr>
-                <td> <a href="{{ url_for('employee_information', employee_id = record.employee_id) }}"> {{ record.name }}</a></td>
+                <td> <a href="{{ url_for('employeeInformation', employee_id = record.employee_id) }}"> {{ record.name }}</a></td>
                 <td> {{ record.role }} </td>
                 <td> {{ record.email }} </td>
                 <td> {{ record.mobile_num </td>
-                <td> <a href="{{ url_for('edit_employee', employee_id = record.employee_id) }}"> edit </a>, 
-                    <a href="{{ url_for('delete_employee', employee_id = record.employee_id) }}"> delete </a>
+                <td> <a href="{{ url_for('editEmployee', employee_id = record.employee_id) }}"> edit </a>, 
+                    <a href="{{ url_for('deletEmployee', employee_id = record.employee_id) }}"> delete </a>
                 </td>
             </tr>
         {% endfor %}

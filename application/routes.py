@@ -8,8 +8,8 @@ def home():
     employees = Employees.query_all()
     return render_template('homepage.html', records = employees)
 
-@app.route('/edit_employee/<int:employee_id>', methods=['GET', 'POST'])
-def edit_employee(employee_id):
+@app.route('/editEmployee/<int:employee_id>', methods=['GET', 'POST'])
+def editEmployee(employee_id):
     form = UpdateEmployee()
     employees = Employees.query.filter_by(employee_id=employee_id).first()
     if request.method == "POST":
@@ -22,15 +22,15 @@ def edit_employee(employee_id):
     return render_template('edit_employee_form.html', form=form)
 
 @app.route("/filter_records",methods=["POST"])
-def filterrecords():
+def filterRecords():
     if request.form["role"]=="all":
         return redirect("/")
     else:
         data = Employees.query.filter_by(dept=request.form["role"]).all()
         return render_template("homepage.html",records=data)
 
-@app.route("/save_employee",methods=["GET","POST"])
-def saveRecord():
+@app.route("/saveEmployee",methods=["GET","POST"])
+def saveEmployee():
     form = AddEmployee()
     if request.method == 'POST':
         name=form.emp_name.data
@@ -43,12 +43,12 @@ def saveRecord():
         return redirect("/")
     return render_template("input_employee_form.html", form=form)
 
-@app.route("/employee_information/<int:employee_id>")
-def personalInformation(employee_id):
+@app.route("/employeeInformation/<int:employee_id>")
+def employeeInformation(employee_id):
 	data = Employees.query.filter_by(employee_id=employee_id).first()
 	return render_template("employee_information.html",record=data)
 
-@app.route("/delete_employee/<int:empno>")
+@app.route("/deleteEmployee/<int:empno>")
 def deleteEmployee(employee_id):
     employee = Employees.query.filter_by(employee_id=employee_id).first()
     db.session.delete(employee)

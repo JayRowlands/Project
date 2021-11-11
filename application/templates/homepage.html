@@ -30,7 +30,7 @@
                 <td> {{ record.email }} </td>
                 <td> {{ record.mobile_num }} </td>
                 <td> <a href="{{ url_for('editEmployee', employee_id = record.employee_id) }}"> edit </a>, 
-                    <a href="{{ url_for('deletEmployee', employee_id = record.employee_id) }}"> delete </a>
+                    <a href="{{ url_for('deleteEmployee', employee_id = record.employee_id) }}"> delete </a>
                 </td>
             </tr>
         {% endfor %}

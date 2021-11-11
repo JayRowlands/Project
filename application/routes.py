@@ -33,7 +33,7 @@ def filterRecords():
 def saveEmployee():
     form = AddEmployee()
     if request.method == 'POST':
-        name=form.emp_name.data
+        name=form.name.data
         role=form.role.data
         email=form.email.data
         mobile_num=form.mobile_num.data
@@ -48,7 +48,7 @@ def employeeInformation(employee_id):
 	data = Employee.query.filter_by(employee_id=employee_id).first()
 	return render_template("employee_information.html",record=data)
 
-@app.route("/deleteEmployee/<int:empno>")
+@app.route("/deleteEmployee/<int:employee_id>")
 def deleteEmployee(employee_id):
     employee = Employee.query.filter_by(employee_id=employee_id).first()
     db.session.delete(employee)

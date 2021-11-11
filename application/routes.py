@@ -5,7 +5,7 @@ from application.models import Employee
 
 @app.route('/')
 def home():
-    employees = Employee.query_all()
+    employees = Employee.query.all()
     return render_template('homepage.html', records = employees)
 
 @app.route('/editEmployee/<int:employee_id>', methods=['GET', 'POST'])

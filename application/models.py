@@ -1,4 +1,3 @@
-from sqlalchemy.orm import relationship
 from application import db
 
 class Employees(db.model):
@@ -7,7 +6,6 @@ class Employees(db.model):
     role = db.Column(db.String(45))
     email = db.Column(db.String(45))
     mobile_num = db.Column(db.Integer)
-    orders = relationship(lambda: Orders)
 
 class Orders(db.model):
     order_id = db.Column(db.Integer, primary_key = True)

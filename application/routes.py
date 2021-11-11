@@ -26,7 +26,7 @@ def filterRecords():
     if request.form["role"]=="all":
         return redirect("/")
     else:
-        data = Employee.query.filter_by(dept=request.form["role"]).all()
+        data = Employee.query.filter_by(role=request.form["role"]).all()
         return render_template("homepage.html",records=data)
 
 @app.route("/saveEmployee",methods=["GET","POST"])

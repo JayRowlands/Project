@@ -26,6 +26,7 @@ def filterRecords():
     if request.form["role"]=="all":
         return redirect("/")
     else:
+        print(request.form["role"])
         data = Employee.query.filter_by(role=request.form["role"]).all()
         return render_template("homepage.html",records=data)
 

@@ -1,7 +1,9 @@
+from os import name
 from flask_wtf import FlaskForm
-from wtforms import IntegerField, StringField, SelectField, SubmitField
-
+from wtforms import StringField, SelectField, SubmitField
+from wtforms.ext.sqlalchemy.fields import QuerySelectField
 from application.models import Employee
+from application import db
 
 class AddEmployee(FlaskForm):
     name = StringField("Name")
@@ -19,14 +21,14 @@ class UpdateEmployee(FlaskForm):
 
 class AddOrder(FlaskForm):
     order_name = StringField("Order Name")
-    cost = IntegerField("Cost")
+    cost = StringField("Cost")
     cust_name = StringField("Customer Name")
-    employee_id = SelectField("Id", choice= [Employee.employee_id])
+    employee_id=QuerySelectField('Employee id' ,query_factory=lambda:Employee.query ,get_label="employee_id")
     submit = SubmitField("Add Order")
 
 class UpdateOrder(FlaskForm):
     order_name = StringField("Order Name")
-    cost = IntegerField("Cost")
+    cost = StringField("Cost")
     cust_name = StringField("Customer Name")
-    employee_id = SelectField("Id", choice= [Employee.employee_id])
-    submit = SubmitField("Update Order")
+    employee_id=QuerySelectField('Employee id' ,query_factory=lambda:Employee.query, get_label="employee_id")
+    submit = SubmitField("Add Order")

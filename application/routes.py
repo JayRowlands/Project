@@ -85,18 +85,19 @@ def editOrder(order_id):
 def saveOrder():
     form = AddOrder()
     if request.method == 'POST':
-        name=form.order_name.data
+        order_name=form.order_name.data
         cost=form.cost.data
         cust_name=form.cust_name.data
-        employee_id=form.employee_id.data
-        new_order = Order(name=name, cost=cost, cust_name=cust_name, employee_id=employee_id)
+        employee_string = filter(str.isdigit, str(form.employee_id.data))
+        employee_id="".join(employee_string)
+        new_order = Order(order_name=order_name, cost=cost, cust_name=cust_name, employee_id=employee_id)
         db.session.add(new_order)
         db.session.commit()
         return redirect("/viewOrders")
     return render_template("input_order_form.html", form=form)
 
 @app.route("/orderInformation/<int:order_id>")
-def employeeInformation(order_id):
+def orderInformation(order_id):
 	data = Order.query.filter_by(order_id=order_id).first()
 	return render_template("order_information.html",record=data)
 

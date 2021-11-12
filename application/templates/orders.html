@@ -1,0 +1,36 @@
+<html>
+    <h1> Order Information </h1>
+    <br>
+    <br>
+    <a href="{{ url_for('saveOrder') }}"> New Record </a>
+
+    <form action="{{ url_for('filterOrders') }}" method="POST">
+        <select name="employee_id">
+            <option value="employee_id"> Employee id </option>
+            <option value="all"> All Records </option> 
+        </select>
+        <input type="submit" value="Filter">
+    </form>
+
+    <table>
+        <tr>
+            <td> Order Name </td>
+            <td> Cost </td>
+            <td> Customer Name </td>
+            <td> Employee id</td>
+        </tr>
+
+        {%  for record in records %}
+            <tr>
+                <td> <a href="{{ url_for('orderInformation', order_id = record.order_id) }}"> {{ record.order_name }}</a></td>
+                <td> {{ record.cost }} </td>
+                <td> {{ record.cust_name }} </td>
+                <td> {{ record.employee_id }} </td>
+                <td> <a href="{{ url_for('editOrder', order_id = record.order_id) }}"> edit </a>, 
+                    <a href="{{ url_for('deleteOrder', order_id = record.order_id) }}"> delete </a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('home') }}"> View Employees</a>
+</html>

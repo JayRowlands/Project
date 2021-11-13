@@ -86,10 +86,11 @@ def editOrder(order_id):
         orders.order_name = form.order_name.data
         orders.cost = form.cost.data
         orders.cust_name = form.cust_name.data
-        orders.employee_id = form.employee_id.data
-        db.orders.commit()
+        employee_string = filter(str.isdigit, str(form.employee_id.data))
+        orders.employee_id="".join(employee_string)
+        db.session.commit()
         return redirect('/viewOrders')
-    return render_template('edit_employee_form.html', form=form)
+    return render_template('edit_order_form.html', form=form)
 
 @app.route("/saveOrder",methods=["GET","POST"])
 def saveOrder():

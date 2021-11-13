@@ -2,8 +2,8 @@
 
 sudo apt install python3 python3-pip python3-venv gunicorn3 -y
 
-#python3 -m venv venv
-#source venv/bin/activate
+python3 -m venv venv
+source venv/bin/activate
 
 pip3 install -r requirements.txt
 
@@ -19,7 +19,7 @@ fi
 
 echo 'TESTING:'
 python3 -m pytest --cov=application --cov-report html
-#python3 app.py
+python3 app.py
 cat - > /tmp/app.service << EOF
 [Unit]
 Description=Run flask app as systemd

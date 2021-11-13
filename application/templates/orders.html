@@ -6,7 +6,9 @@
 
     <form action="{{ url_for('filterOrders') }}" method="POST">
         <select name="employee_id">
-            <option value="employee_id"> Employee id </option>
+            {% for record in employee_records %}
+	            <option value="{{ record }}"> {{ record }} </option>
+            {% endfor %}
             <option value="all"> All Records </option> 
         </select>
         <input type="submit" value="Filter">
@@ -20,7 +22,7 @@
             <td> Employee id</td>
         </tr>
 
-        {%  for record in records %}
+        {%  for record in order_records %}
             <tr>
                 <td> <a href="{{ url_for('orderInformation', order_id = record.order_id) }}"> {{ record.order_name }}</a></td>
                 <td> {{ record.cost }} </td>

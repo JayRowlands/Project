@@ -58,15 +58,25 @@ def deleteEmployee(employee_id):
 @app.route("/viewOrders")
 def viewOrders():
     orders = Order.query.all()
-    return render_template('orders.html', records = orders)
+    #Employee.query.all()
+    employee_data = Employee.query.with_entities(Employee.employee_id)
+    employee_string=[]
+    for i in employee_data:
+        employee_string.append("".join(filter(str.isdigit, str(i))))
+    return render_template('orders.html', employee_records=employee_string, order_records=orders)
 
 @app.route("/filterOrders",methods=["POST"])
 def filterOrders():
     if request.form["employee_id"]=="all":
+        print("i run")
         return redirect("/viewOrders")
     else:
-        data = Order.query.filter_by(employee_id=request.form["employee_id"]).all()
-        return render_template("orders.html",records=data)
+        employee_data = Employee.query.with_entities(Employee.employee_id)
+        employee_string=[]
+        for i in employee_data:
+            employee_string.append("".join(filter(str.isdigit, str(i)))) 
+        order_data = Order.query.filter_by(employee_id=request.form["employee_id"]).all()
+        return render_template("orders.html", employee_records=employee_string, order_records=order_data)
 
 @app.route('/editOrder/<int:order_id>', methods=['GET', 'POST'])
 def editOrder(order_id):

@@ -1,9 +1,7 @@
-from os import name
 from flask_wtf import FlaskForm
 from wtforms import StringField, SelectField, SubmitField
 from wtforms.ext.sqlalchemy.fields import QuerySelectField
 from application.models import Employee
-from application import db
 
 class AddEmployee(FlaskForm):
     name = StringField("Name")

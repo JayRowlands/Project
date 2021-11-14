@@ -8,8 +8,8 @@ from os import getenv
 
 class TestBase(TestCase):
     def create_app(self):
-        app.config.update(SQLALCHEMY_DATABASE_URI='mysql+pymysql://root:project_admin@34.105.227.92:3306/project',
-            SECRET_KEY='secret_key',
+        app.config.update(SQLALCHEMY_DATABASE_URI=getenv('db_uri'),
+            SECRET_KEY=getenv('secretkey'),
             DEBUG=True,
             WTF_CSRF_ENABLED=False
         )

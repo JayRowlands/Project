@@ -6,6 +6,7 @@ class Employee(db.Model):
     role = db.Column(db.String(45))
     email = db.Column(db.String(45))
     mobile_num = db.Column(db.String(45))
+    orders = db.relationship('Order', cascade='all,delete', backref='employee')
 
 class Order(db.Model):
     order_id = db.Column(db.Integer, primary_key = True)

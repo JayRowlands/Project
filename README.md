@@ -76,3 +76,13 @@ The user can also delete records on either the order or employee by clicking the
 
 ![App Delete Order](https://github.com/JayRowlands/Project/blob/main/resources/App-delete-order.png)
 
+## Testing
+
+For the application to meet the project requirements, unit testing was required with a coverage report. I have written unit tests to ensure the application still works, by this I mean, all routes can be accessed at all times, CRUD features work for both employees and orders, and the 1 to many relationship is still in working condition. Through the use of Jenkins, testing is conducted with each git pull or push and provides a basic coverage report each time.
+
+![Jenkins Coverage](https://github.com/JayRowlands/Project/blob/main/resources/Jenkins-coverage.png)
+
+For a more extensive coverage report, this has been done in visual studio code showing 100% coverage.
+
+![VSC Coverage](https://github.com/JayRowlands/Project/blob/main/resources/VSC-coverage.png)
+

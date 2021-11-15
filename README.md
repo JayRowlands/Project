@@ -10,6 +10,8 @@ Repository containing the work of Jay Rowlands for the QA project titled "DevOps
 * [Application](#Application)
 * [Testing](#Testing)
 * [Conclusion](#Conclusion)
+* [Known Issues](#Known-Issues)
+* [Future Work](#Future-Work)
 
 ## Project Brief
 
@@ -90,3 +92,10 @@ For a more extensive coverage report, this has been done in visual studio code s
 
 Overall the application developed meets the requirements set out by the project brief to an optimal standard. Using information I have learned through my training and online researching I managed to apply some features which I think highlight this application, such as using filter functions on a QuerySelectField return to populate a drop down menu with existing employee id's in the database. I have also learned how to efficiently test a web application using a mysql database to get maximum coverage using pytest covering all areas. However the application has suffered due to time constraints which has resulted in lack of system improvment and optimisation.
 
+## Known Issues
+
+Through my testing and experience of using the system, I found an error very late while implementing the tests. Before a git push or pull request is made and the build runs on Jenkins, create.py has to be run, create.py also needs to be run after the deploy.sh has run on the Jenkins VM or a table not found error will be displayed. Without further testing the root of the error cannot be found however I believe it could possibly be any of the following:
+
+*Problem with the test file tearing down the database after it has run
+*Issue with test file trying to use primary keys that already exist
+*deploy.sh file not correctly creating the tables

@@ -1,5 +1,6 @@
 from application import db
 
+#Employee model
 class Employee(db.Model):
     employee_id = db.Column(db.Integer, primary_key = True)
     name = db.Column(db.String(45))

@@ -86,3 +86,7 @@ For a more extensive coverage report, this has been done in visual studio code s
 
 ![VSC Coverage](https://github.com/JayRowlands/Project/blob/main/resources/VSC-coverage.png)
 
+## Conclusion
+
+Overall the application developed meets the requirements set out by the project brief to an optimal standard. Using information I have learned through my training and online researching I managed to apply some features which I think highlight this application, such as using filter functions on a QuerySelectField return to populate a drop down menu with existing employee id's in the database. I have also learned how to efficiently test a web application using a mysql database to get maximum coverage using pytest covering all areas. However the application has suffered due to time constraints which has resulted in lack of system improvment and optimisation.
+

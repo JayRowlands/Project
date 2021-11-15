@@ -15,27 +15,27 @@ Repository containing the work of Jay Rowlands for the QA project titled "DevOps
 
 ## Project Brief
 
-For the scope of this project, it is essential that the development of a CRUD application be accompied by a Kanban board featuring user stories, user cases and tasks needing to complete the project. The application must have a relational databases with at least 2 tables. The scope also sets the requirement for clear documentation with regards to the design phase ensuring the architecture is given in as much detail as possible. Furthermore, test suites for the application must be written and documented to provide as much coverage as possible, this will provide consistency of the software. Accompanying the back-end CRUD features, it will also have to be brought to life with a front-end website and integrated API's via Flask. The entire project must be fully integrated with version control and the server must be deployed to a cloud-based VM.
+For the scope of this project, the development of a CRUD application must be accompanied by a Kanban board featuring user stories, user cases and tasks needed to complete the project. The application must have a relational database with at least 2 tables. The scope also sets the requirement for clear documentation with regards to the design phase ensuring the architecture is given in as much detail as possible. Furthermore, test suites for the application must be written and documented to provide as much coverage as possible, this will provide consistency of the software. Accompanying the back-end CRUD features, it will also have to be brought to life with a front-end website and integrated APIs via Flask. The entire project must be fully integrated with version control and the server must be deployed to a cloud-based VM.
 
 ## Introduction
 
-To meet the project brief set out, I will be developing an online web application to create, retrive, update and delete data for an ordering system to which employees will prepare the orders. Throughout the duration of the project I will be creating a risk assessment for the project brief. I will also be completing designs for the database architecture which will be implemented into the application, the application development will also be documented with tests to ensure continuous testing is followed.
+To meet the project brief set out, I will be developing an online web application to create, retrieve, update and delete data for an ordering system to which employees will prepare the orders. Throughout the project, I will be creating a risk assessment for the project brief. I will also be completing designs for the database architecture which will be implemented into the application, the application development will also be documented with tests to ensure continuous testing is followed.
 
 ## Risk Assessment
 
-Before designing and developing the application, a risk assessment was created to outline the possible complications that could occur during the development and operation of the application as well as the measures that will be put in place to reduce the risk of these complications occuring. Please see below.
+Before designing and developing the application, a risk assessment was created to outline the possible complications that could occur during the development and operation of the application as well as the measures that will be put in place to reduce the risk of these complications occurring. Please see below.
 
 ![Risk Assessment](https://github.com/JayRowlands/Project/blob/main/resources/Risk-Assessment.png) 
 
 ## Design
 
-For the minimum viable product, I have chosen to design an application which orders are placed and completed by employees. Orders are created by an employee. An employee is assigned to complete this order, for the employee to complete the order they must, retrieve it to understand what has been ordered and delete the order once it has been completed, in the case of an order change, the order must be updatable. The database architecture in the resource below shows the 1 to many relationship between and employee and order.
+For the minimum viable product, I have chosen to design an application in which orders are placed and completed by employees. Orders are created by an employee. An employee is assigned to complete this order, for the employee to complete the order they must retrieve it to understand what has been ordered and delete the order once it has been completed, in the case of an order change, the order must be updatable. The database architecture in the resource below shows the 1 to many relationships between an employee and order.
 
 ![MVP ERD](https://github.com/JayRowlands/Project/blob/main/resources/Project-ERD.png)
 
 ## Project Management
 
-To effectively manage this project, I used Jira to setup a sprint containing user stories which listed tasks detailing the requirements of the system in correlation to the design set out. 
+To effectively manage this project, I used Jira to set up a sprint containing user stories that listed tasks detailing the requirements of the system in correlation to the design set out. 
 
 ![DOP Board1](https://github.com/JayRowlands/Project/blob/main/resources/dop-board1.png)
 ![DOP Board2](https://github.com/JayRowlands/Project/blob/main/resources/dop-board2.png)
@@ -44,7 +44,7 @@ Here is a burndown chart for the project sprint lifecycle.
 
 ![Burndown Chart](https://github.com/JayRowlands/Project/blob/main/resources/Burndown-Chart.png)
 
-Furthermore, for the version control system, Git was used with a linked Github repository for the remote. This allowed me to keep functioning versions of code which I sometimes referred back to if for any reason that function stopped working, it also acts as a backup for the project work. I used a Github webhook to connect to my Jenkins Ubuntu VM where the build server was hosted, Jenkins provided automation for building and testing the application and was setup specifically via the webhook to redeploy anytime a git push or pull request was made.
+Furthermore, for the version control system, Git was used with a linked Github repository for the remote. This allowed me to keep functioning versions of code which I sometimes referred back to if for any reason that function stopped working, it also acts as a backup for the project work. I used a Github webhook to connect to my Jenkins Ubuntu VM where the build server was hosted, Jenkins provided automation for building and testing the application and was set up specifically via the webhook to redeploy anytime a git push or pull request was made. 
 
 ## Application
 
@@ -90,18 +90,18 @@ For a more extensive coverage report, this has been done in visual studio code s
 
 ## Conclusion
 
-Overall the application developed meets the requirements set out by the project brief to an optimal standard. Using information I have learned through my training and online researching I managed to apply some features which I think highlight this application, such as using filter functions on a QuerySelectField return to populate a drop down menu with existing employee id's in the database. I have also learned how to efficiently test a web application using a mysql database to get maximum coverage using pytest covering all areas. However the application has suffered due to time constraints which has resulted in lack of system improvment and optimisation.
+Overall the application developed meets the requirements set out by the project brief to an optimal standard. Using information I have learned through my training and online researching I managed to apply some features that highlights this application, such as using filter functions on a QuerySelectField return to populate a drop-down menu with existing employees id's in the database. I have also learned how to efficiently test a web application using a MySQL database to get maximum coverage using pytest covering all areas. However, the application has suffered due to time constraints which resulted in a lack of system improvement and optimisation.
 
 ## Known Issues
 
 Through my testing and experience of using the system, I found an error very late while implementing the tests. Before a git push or pull request is made and the build runs on Jenkins, create.py has to be run, create.py also needs to be run after the deploy.sh has run on the Jenkins VM or a table not found error will be displayed. Without further testing the root of the error cannot be found however I believe it could possibly be any of the following:
 
-*Problem with the test file tearing down the database after it has run
-*Issue with test file trying to use primary keys that already exist
-*deploy.sh file not correctly creating the tables
+* Problem with the test file tearing down the database after it has run
+* Issue with test file trying to use primary keys that already exist
+* deploy.sh file not correctly creating the tables
 
 ## Future Work
 
-In the future, after fixing the issue detailed above, I would also like to implement ingredients and recipes so that the orders can be created with recipes that uses set ingredients and an employee is asigned to completing the order. I have produced an ERD Design for the proposed system.
+In the future, after fixing the issue detailed above, I would also like to implement ingredients and recipes so that the orders can be created with recipes that use set ingredients and an employee is assigned to complete the order. I have produced an ERD Design for the proposed system.
 
 ![ERD Future Work](https://github.com/JayRowlands/Project/blob/main/resources/ERD-Future-Work.png)

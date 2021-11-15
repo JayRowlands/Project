@@ -43,3 +43,31 @@ Here is a burndown chart for the project sprint lifecycle.
 ![Burndown Chart](https://github.com/JayRowlands/Project/blob/main/resources/Burndown-Chart.png)
 
 Furthermore, for the version control system, Git was used with a linked Github repository for the remote. This allowed me to keep functioning versions of code which I sometimes referred back to if for any reason that function stopped working, it also acts as a backup for the project work. I used a Github webhook to connect to my Jenkins Ubuntu VM where the build server was hosted, Jenkins provided automation for building and testing the application and was setup specifically via the webhook to redeploy anytime a git push or pull request was made.
+
+## Application
+
+When navigating to the site, the user is shown an employee information page.
+
+![App Employee Info Blank]()
+
+As we can see there are currently no records to display, clicking new record takes the user to a form which the user can enter information that is sent off to our database record creator.
+
+![App Add Employee](https://github.com/JayRowlands/Project/blob/main/resources/App-add-emp.png)
+![App Employee Info Record](https://github.com/JayRowlands/Project/blob/main/resources/App-EI-Record.png)
+
+The employee information can be viewed by clicking on the employees name which will also give the user that employees id.
+![App View Employee](https://github.com/JayRowlands/Project/blob/main/resources/App-view-emp.png)
+
+The user can edit the employee to change the details of that specific record by clicking the edit button which will again take the user to a form.
+![App Update Employee](https://github.com/JayRowlands/Project/blob/main/resources/App-update-emp.png)
+![App Updated Employee](https://github.com/JayRowlands/Project/blob/main/resources/App-updated-emp.png)
+
+The user can view the orders by clicking view orders on the homepage.
+![App Order Info Blank](https://github.com/JayRowlands/Project/blob/main/resources/App-OI-blank.png)
+
+By adding some records through the form like with employees the user can see a working 1 to many relationship between the orders and the employees.
+![App Order Info 1toM](https://github.com/JayRowlands/Project/blob/main/resources/App-OI-1toM.png)
+
+The user can also delete records on either the order or employee by clicking the delete button.
+![App Delete Order](https://github.com/JayRowlands/Project/blob/main/resources/App-delete-order.png)
+

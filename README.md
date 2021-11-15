@@ -48,26 +48,31 @@ Furthermore, for the version control system, Git was used with a linked Github r
 
 When navigating to the site, the user is shown an employee information page.
 
-![App Employee Info Blank]()
+![App Employee Info Blank](https://github.com/JayRowlands/Project/blob/main/resources/App-EI-blank.png)
 
 As we can see there are currently no records to display, clicking new record takes the user to a form which the user can enter information that is sent off to our database record creator.
 
 ![App Add Employee](https://github.com/JayRowlands/Project/blob/main/resources/App-add-emp.png)
-![App Employee Info Record](https://github.com/JayRowlands/Project/blob/main/resources/App-EI-Record.png)
+![App Employee Info Record](https://github.com/JayRowlands/Project/blob/main/resources/App-EI-record.png)
 
 The employee information can be viewed by clicking on the employees name which will also give the user that employees id.
+
 ![App View Employee](https://github.com/JayRowlands/Project/blob/main/resources/App-view-emp.png)
 
 The user can edit the employee to change the details of that specific record by clicking the edit button which will again take the user to a form.
+
 ![App Update Employee](https://github.com/JayRowlands/Project/blob/main/resources/App-update-emp.png)
 ![App Updated Employee](https://github.com/JayRowlands/Project/blob/main/resources/App-updated-emp.png)
 
 The user can view the orders by clicking view orders on the homepage.
+
 ![App Order Info Blank](https://github.com/JayRowlands/Project/blob/main/resources/App-OI-blank.png)
 
 By adding some records through the form like with employees the user can see a working 1 to many relationship between the orders and the employees.
+
 ![App Order Info 1toM](https://github.com/JayRowlands/Project/blob/main/resources/App-OI-1toM.png)
 
 The user can also delete records on either the order or employee by clicking the delete button.
+
 ![App Delete Order](https://github.com/JayRowlands/Project/blob/main/resources/App-delete-order.png)
 

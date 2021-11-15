@@ -99,3 +99,7 @@ Through my testing and experience of using the system, I found an error very lat
 *Problem with the test file tearing down the database after it has run
 *Issue with test file trying to use primary keys that already exist
 *deploy.sh file not correctly creating the tables
+
+## Future Work
+
+In the future, after fixing the issue detailed above, I would also like to implement ingredients and ingredients so that the user can also 

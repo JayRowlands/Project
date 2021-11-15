@@ -102,4 +102,6 @@ Through my testing and experience of using the system, I found an error very lat
 
 ## Future Work
 
-In the future, after fixing the issue detailed above, I would also like to implement ingredients and ingredients so that the user can also 
+In the future, after fixing the issue detailed above, I would also like to implement ingredients and recipes so that the orders can be created with recipes that uses set ingredients and an employee is asigned to completing the order. I have produced an ERD Design for the proposed system.
+
+![ERD Future Work](https://github.com/JayRowlands/Project/blob/main/resources/ERD-Future-Work.png)
